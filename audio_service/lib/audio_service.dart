@@ -4026,7 +4026,7 @@ class _HandlerCallbacks extends AudioHandlerCallbacks {
     if (childrenSubscription == null) {
       childrenSubscription = _childrenSubscriptions[parentMediaId] =
           (await handlerFuture).subscribeToChildren(parentMediaId);
-      childrenSubscription.listen((Map<String, dynamic>? options) {
+      childrenSubscription.skip(1).listen((Map<String, dynamic>? options) {
         // Notify clients that the children of [parentMediaId] have changed.
         _platform.notifyChildrenChanged(NotifyChildrenChangedRequest(
           parentMediaId: parentMediaId,
