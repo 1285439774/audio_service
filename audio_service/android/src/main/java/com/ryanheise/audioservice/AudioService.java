@@ -816,7 +816,6 @@ public class AudioService extends MediaBrowserServiceCompat {
     @Override
     public BrowserRoot onGetRoot(String clientPackageName, int clientUid, Bundle rootHints) {
         boolean isAndroidAuto = "com.google.android.projection.gearhead".equals(clientPackageName);
-        Log.i(TAG, "onGetRoot called by: " + clientPackageName + " isAA=" + isAndroidAuto + "clientUid: "+clientUid);
         if(isAndroidAuto) {
             Intent intent = new Intent();
             intent.setAction("com.gigaboyz.headunitapp.aa.CONNECTION_STATE_CHANGED");
